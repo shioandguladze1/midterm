@@ -8,22 +8,24 @@
 import UIKit
 
 class EnterUserController: UIViewController {
-
+    @IBOutlet weak var userNameTextField: UITextField!
+    var delegate: UserNameSavedDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onEnterUserName(_ sender: Any) {
+        let userName = userNameTextField.getText()
+        if userName.count <= 6 {
+            showAlertWithOkButton(title: "Error", body: "User name length should be more than 6")
+        }else{
+            UserDefaults.standard.set(userName, forKey: userNameKey)
+            UserDefaults.standard.set(UUID().uuidString, forKey: userUUIDdKey)
+            delegate?.onUserNameSaved(userName: userName)
+            dismiss(animated: true)
+        }
     }
-    */
-
+    
 }

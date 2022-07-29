@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+let userNameKey = "userName"
+let userUUIDdKey = "userNameUid"

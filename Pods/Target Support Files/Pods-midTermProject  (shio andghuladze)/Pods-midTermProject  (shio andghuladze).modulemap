@@ -1,0 +1,6 @@
+framework module Pods_midTermProject___shio_andghuladze_ {
+  umbrella header "Pods-midTermProject  (shio andghuladze)-umbrella.h"
+
+  export *
+  module * { export * }
+}

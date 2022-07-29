@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol UserNameSavedDelegate{
+    
+    func onUserNameSaved(userName: String)
+    
+}

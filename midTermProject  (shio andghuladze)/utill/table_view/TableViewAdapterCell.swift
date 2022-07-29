@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol TableViewAdapterCell{
+        
+    associatedtype T
+    
+    func setUp(data: T?)
+    
+}

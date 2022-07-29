@@ -6,11 +6,28 @@
 //
 
 import Foundation
+import UIKit
 
-extension Object {
+extension UITextField{
     
-    func toString()-> String{
-        return "\(self)"
+    func getText()-> String{
+        return text ?? ""
+    }
+    
+}
+
+extension UIViewController{
+    
+    func showAlertWithOkButton(title: String, body: String){
+        let dialogMessage = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .default){_ in
+            dialogMessage.dismiss(animated: true)
+        }
+        
+        dialogMessage.addAction(ok)
+
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatsScreenController: UIViewController, UserNameSavedDelegate {
+class BottomNavHostController: UITabBarController, UserNameSavedDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class ChatsScreenController: UIViewController, UserNameSavedDelegate {
     
     private func checkUserExists(){
         let userName = UserDefaults.standard.string(forKey: userNameKey)
-        if userName != nil{
+        if userName == nil{
             createUser()
         }
     }

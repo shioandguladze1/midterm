@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TableViewAdapter<T, C: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate{
+class TableViewAdapter<T, C: TableViewAdapterCell>: NSObject, UITableViewDataSource, UITableViewDelegate{
     var data: [T] = []
     let tableView: UITableView
     let cellIdentifier: String
@@ -28,18 +28,14 @@ class TableViewAdapter<T, C: UITableViewCell>: NSObject, UITableViewDataSource, 
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
-    func configureCell(cell: C, data: T){
-        
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? C{
-            configureCell(cell: cell, data: data[indexPath.row])
-            return cell
+            cell.setUp(data: data[indexPath.row] as? C.T)
+            return cell as? UITableViewCell ?? UITableViewCell()
         }
         return UITableViewCell()
     }

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Chat{
+    let users: [User]
+    let messages: [Message]
+}

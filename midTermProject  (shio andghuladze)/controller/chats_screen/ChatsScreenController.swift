@@ -8,22 +8,39 @@
 import UIKit
 
 class ChatsScreenController: UIViewController {
-
+    @IBOutlet weak var chatsTableView: UITableView!
+    private var adapter: TableViewAdapter<Chat, ChatsTableViewCell>?
+    let data = [
+        Chat(users: [
+            User(name: "user1", UUID: "1", isActive: ""),
+            User(name: "user2", UUID: "2", isActive: "")
+        ], messages: [Message(text: "asdasdasdas", sender: User(name: "user2", UUID: "2", isActive: ""))]),
+        Chat(users: [
+            User(name: "user1", UUID: "1", isActive: ""),
+            User(name: "user2", UUID: "2", isActive: "")
+        ], messages: [Message(text: "asdasdasdas", sender: User(name: "user2", UUID: "2", isActive: ""))]),
+        Chat(users: [
+            User(name: "user1", UUID: "1", isActive: ""),
+            User(name: "user2", UUID: "2", isActive: "")
+        ], messages: [Message(text: "asdasdasdas", sender: User(name: "user2", UUID: "2", isActive: ""))]),
+        Chat(users: [
+            User(name: "user1", UUID: "1", isActive: ""),
+            User(name: "user2", UUID: "2", isActive: "")
+        ], messages: [Message(text: "asdasdasdas", sender: User(name: "user2", UUID: "2", isActive: ""))]),
+        Chat(users: [
+            User(name: "user1", UUID: "1", isActive: ""),
+            User(name: "user2", UUID: "2", isActive: "")
+        ], messages: [Message(text: "asdasdasdas", sender: User(name: "user2", UUID: "2", isActive: ""))])
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUpTableView(){
+        adapter = TableViewAdapter(tableView: chatsTableView, cellIdentifier: "ChatsTableViewCell", rowHeight: 50)
+        adapter?.setData(data: data)
     }
-    */
-
+    
 }

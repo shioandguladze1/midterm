@@ -8,22 +8,18 @@
 import UIKit
 
 class ActiveUsersController: UIViewController {
+    @IBOutlet weak var usersTableView: UITableView!
+    private let data = ["shio", "ana", "mari", "nia", "levani"]
+    private var adapter: TableViewAdapter<String, UsersTableViewCell>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpAdapter()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUpAdapter(){
+        adapter = TableViewAdapter(tableView: usersTableView, cellIdentifier: "UsersTableViewCell", rowHeight: 50)
+        adapter?.setData(data: data)
     }
-    */
 
 }
