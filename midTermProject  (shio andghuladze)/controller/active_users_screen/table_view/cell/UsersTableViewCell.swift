@@ -8,11 +8,11 @@
 import UIKit
 
 class UsersTableViewCell: UITableViewCell, TableViewAdapterCell {
-    typealias T = String
+    typealias T = User
     @IBOutlet weak var userNameLabel: UILabel!
     
-    func setUp(data: String?) {
-        userNameLabel.text = data
+    func setUp(data: User?) {
+        userNameLabel.text = data?.name
     }
     
 }

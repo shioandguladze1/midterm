@@ -13,6 +13,7 @@ class TableViewAdapter<T, C: TableViewAdapterCell>: NSObject, UITableViewDataSou
     let tableView: UITableView
     let cellIdentifier: String
     let rowHeight: CGFloat
+    var onCellClick: ((T)-> Void)?
     
     init(tableView: UITableView, cellIdentifier: String, rowHeight: CGFloat){
         self.tableView = tableView
@@ -41,7 +42,12 @@ class TableViewAdapter<T, C: TableViewAdapterCell>: NSObject, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onCellClick?(data[indexPath.row])
     }
     
     func setData(data: [T]){

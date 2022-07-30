@@ -30,4 +30,11 @@ extension UIViewController{
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
+    func navigateToController<T: UIViewController>(identifier: String, closure: (T)-> Void){
+        if let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as? T {
+            closure(vc)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }

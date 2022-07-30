@@ -103,13 +103,52 @@
                     <view key="view" contentMode="scaleToFill" id="zam-Ur-LqR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hOe-36-yoj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCZ-l1-E7l">
+                                <rect key="frame" x="334" y="812" width="70" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="brh-gZ-2Ss"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSendButtonClick:" destination="1gm-aV-khZ" eventType="touchUpInside" id="ttE-7p-xja"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-Gb-5xQ">
+                                <rect key="frame" x="10" y="813" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2PH-v2-Y1S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4mn-Gb-5xQ" firstAttribute="top" secondItem="hOe-36-yoj" secondAttribute="bottom" id="7HU-oo-WVP"/>
+                            <constraint firstItem="hOe-36-yoj" firstAttribute="top" secondItem="2PH-v2-Y1S" secondAttribute="top" id="DSy-lX-csq"/>
+                            <constraint firstItem="2PH-v2-Y1S" firstAttribute="bottom" secondItem="4mn-Gb-5xQ" secondAttribute="bottom" constant="15" id="EOy-sN-GGb"/>
+                            <constraint firstItem="FCZ-l1-E7l" firstAttribute="leading" secondItem="4mn-Gb-5xQ" secondAttribute="trailing" constant="10" id="FGl-XP-ekf"/>
+                            <constraint firstItem="4mn-Gb-5xQ" firstAttribute="leading" secondItem="2PH-v2-Y1S" secondAttribute="leading" constant="10" id="Fvc-Pt-1In"/>
+                            <constraint firstItem="2PH-v2-Y1S" firstAttribute="trailing" secondItem="FCZ-l1-E7l" secondAttribute="trailing" constant="10" id="H5W-hb-P1X"/>
+                            <constraint firstItem="2PH-v2-Y1S" firstAttribute="trailing" secondItem="hOe-36-yoj" secondAttribute="trailing" id="INP-qg-SHR"/>
+                            <constraint firstItem="hOe-36-yoj" firstAttribute="leading" secondItem="2PH-v2-Y1S" secondAttribute="leading" id="M23-z9-5za"/>
+                            <constraint firstItem="FCZ-l1-E7l" firstAttribute="centerY" secondItem="4mn-Gb-5xQ" secondAttribute="centerY" id="riL-uq-hzw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="4mn-Gb-5xQ" id="ewc-fV-Per"/>
+                        <outlet property="messagesTableview" destination="hOe-36-yoj" id="TJ6-VC-EUQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juP-Vm-7tY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668.1159420289855" y="65.625"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="65.625"/>
         </scene>
         <!--Enter User Controller-->
         <scene sceneID="WEL-ZX-0a2">
@@ -159,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hV-4J-a3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521.739130434783" y="65.625"/>
+            <point key="canvasLocation" x="2817" y="66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p3O-8c-W81">

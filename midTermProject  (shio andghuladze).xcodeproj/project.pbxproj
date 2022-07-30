@@ -31,6 +31,10 @@
 		9558A63E2894648C0059D293 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A63C2894648C0059D293 /* UsersTableViewCell.swift */; };
 		9558A63F2894648C0059D293 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558A63D2894648C0059D293 /* UsersTableViewCell.xib */; };
 		9558A6422894656F0059D293 /* TableViewAdapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A6412894656F0059D293 /* TableViewAdapterCell.swift */; };
+		955D623D28955A0400EA0720 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D623B28955A0400EA0720 /* MessageCell.swift */; };
+		955D623E28955A0400EA0720 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955D623C28955A0400EA0720 /* MessageCell.xib */; };
+		955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D6240289565E700EA0720 /* PaddingLabel.swift */; };
+		955D6243289590A300EA0720 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D6242289590A300EA0720 /* CollectionExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		9558A63C2894648C0059D293 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		9558A63D2894648C0059D293 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		9558A6412894656F0059D293 /* TableViewAdapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapterCell.swift; sourceTree = "<group>"; };
+		955D623B28955A0400EA0720 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		955D623C28955A0400EA0720 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		955D6240289565E700EA0720 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		955D6242289590A300EA0720 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		BBF5F6C06DC4DF32E7990D3B /* Pods_midTermProject___shio_andghuladze_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_midTermProject___shio_andghuladze_.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1896CDA0C26B039A9895B25 /* Pods-midTermProject  (shio andghuladze).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-midTermProject  (shio andghuladze).debug.xcconfig"; path = "Target Support Files/Pods-midTermProject  (shio andghuladze)/Pods-midTermProject  (shio andghuladze).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +163,7 @@
 		9528B221288F09AF0054F618 /* messages_screen */ = {
 			isa = PBXGroup;
 			children = (
+				955D62352895477F00EA0720 /* table_view */,
 				9528B222288F09D00054F618 /* MessagesController.swift */,
 			);
 			path = messages_screen;
@@ -173,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9558A617289436050059D293 /* ViewExtensions.swift */,
+				955D6242289590A300EA0720 /* CollectionExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 		9558A63528945AEB0059D293 /* utill */ = {
 			isa = PBXGroup;
 			children = (
+				955D623F289565D200EA0720 /* view */,
 				9558A640289465440059D293 /* table_view */,
 			);
 			path = utill;
@@ -235,6 +246,31 @@
 				9558A6412894656F0059D293 /* TableViewAdapterCell.swift */,
 			);
 			path = table_view;
+			sourceTree = "<group>";
+		};
+		955D62352895477F00EA0720 /* table_view */ = {
+			isa = PBXGroup;
+			children = (
+				955D6236289547AB00EA0720 /* cell */,
+			);
+			path = table_view;
+			sourceTree = "<group>";
+		};
+		955D6236289547AB00EA0720 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				955D623B28955A0400EA0720 /* MessageCell.swift */,
+				955D623C28955A0400EA0720 /* MessageCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		955D623F289565D200EA0720 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				955D6240289565E700EA0720 /* PaddingLabel.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		B2DE8EF23608A1F13D4DC17C /* Frameworks */ = {
@@ -319,6 +355,7 @@
 				9558A63F2894648C0059D293 /* UsersTableViewCell.xib in Resources */,
 				9558A61E289444A80059D293 /* GoogleService-Info.plist in Resources */,
 				9528B20F288F08F30054F618 /* Assets.xcassets in Resources */,
+				955D623E28955A0400EA0720 /* MessageCell.xib in Resources */,
 				9528B20D288F08F20054F618 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,8 +414,10 @@
 				9558A62128944A850059D293 /* ChatsScreenController.swift in Sources */,
 				9528B223288F09D00054F618 /* MessagesController.swift in Sources */,
 				9558A6422894656F0059D293 /* TableViewAdapterCell.swift in Sources */,
+				955D6243289590A300EA0720 /* CollectionExtensions.swift in Sources */,
 				9558A63828945B080059D293 /* TableViewAdapter.swift in Sources */,
 				9528B220288F09AA0054F618 /* ActiveUsersController.swift in Sources */,
+				955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */,
 				9528B206288F08F20054F618 /* AppDelegate.swift in Sources */,
 				9558A615289432040059D293 /* EnterUserController.swift in Sources */,
 				9528B208288F08F20054F618 /* SceneDelegate.swift in Sources */,
@@ -389,6 +428,7 @@
 				9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */,
 				9558A61A28943CD00059D293 /* UserNameSavedDelegate.swift in Sources */,
 				9558A6312894539F0059D293 /* Message.swift in Sources */,
+				955D623D28955A0400EA0720 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
