@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct User{
+struct User: Codable{
     let name: String
     let UUID: String
-    let isActive: String
+    
+    func toDictionary()-> NSDictionary{
+        return [
+            "name": name,
+            "UUID": UUID
+        ]
+    }
 }

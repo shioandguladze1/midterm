@@ -9,13 +9,6 @@ import UIKit
 
 class ActiveUsersController: UIViewController {
     @IBOutlet weak var usersTableView: UITableView!
-    private let data = [
-        User(name: "shio", UUID: "@", isActive: ""),
-        User(name: "shio", UUID: "@", isActive: ""),
-        User(name: "shio", UUID: "@", isActive: ""),
-        User(name: "shio", UUID: "@", isActive: ""),
-        User(name: "shio", UUID: "@", isActive: "")
-    ]
     private var adapter: TableViewAdapter<User, UsersTableViewCell>?
 
     override func viewDidLoad() {
@@ -25,7 +18,6 @@ class ActiveUsersController: UIViewController {
     
     private func setUpAdapter(){
         adapter = TableViewAdapter(tableView: usersTableView, cellIdentifier: "UsersTableViewCell", rowHeight: 50)
-        adapter?.setData(data: data)
         adapter?.onCellClick = navigateToMessages
     }
     
