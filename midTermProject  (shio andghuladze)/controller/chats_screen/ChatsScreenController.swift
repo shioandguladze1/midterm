@@ -11,25 +11,12 @@ import FirebaseDatabase
 class ChatsScreenController: UIViewController {
     @IBOutlet weak var chatsTableView: UITableView!
     private var adapter: TableViewAdapter<Chat, ChatsTableViewCell>?
-    let uuid = UserDefaults.standard.string(forKey: userUUIDdKey) ?? ""
-    let ref = Database.database().reference()
-    
-    let users = [
-        getCurrentUserRef(),
-        User(name: "gio", UUID: "asdasd")
-    ]
-    
-
-
+    private let viewModel = ChatsControllerViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        // getData()
-        let chats = [
-            Chat(users: users, messages: [])
-        ]
-        adapter?.setData(data: chats)
+        observeToChats()
     }
     
     private func setUpTableView(){
@@ -37,17 +24,17 @@ class ChatsScreenController: UIViewController {
         adapter?.onCellClick = navigateToChat
     }
     
+    private func observeToChats(){
+        let observer = Observer<[Chat]>(){ chats in
+            self.adapter?.setData(data: chats)
+        }
+        viewModel.chatsLiveData.addObserver(observer: observer)
+    }
+    
     private func navigateToChat(chat: Chat){
         navigateToController(identifier: "MessagesController"){ (vc: MessagesController) in
             vc.chatMembers = chat.users
-            vc.title = chat.users.getChatTitle(currentUserUUID: uuid)
-        }
-    }
-    
-    private func getData(){
-        ref.child(chatsDirKey).observe(.value){ snapshot in
-            let chats = snapshot.children.convertToObjectArray(type: Chat.self)
-            self.adapter?.setData(data: chats)
+            vc.title = chat.users.getChatTitle()
         }
     }
     

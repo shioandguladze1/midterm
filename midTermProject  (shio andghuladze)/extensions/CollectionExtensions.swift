@@ -10,10 +10,10 @@ import Firebase
 
 extension Array where Element == User{
     
-    func getChatTitle(currentUserUUID: String)-> String{
+    func getChatTitle()-> String{
         var title = ""
         forEach{user in
-            if currentUserUUID != user.UUID{
+            if currentUser?.UUID != user.UUID{
                 title += user.name + ", "
             }
         }

@@ -43,6 +43,9 @@
 		95601B6028A15D80005FA61D /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5F28A15D80005FA61D /* Observer.swift */; };
 		95601B6328A16276005FA61D /* ChatsControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B6228A16276005FA61D /* ChatsControllerViewModel.swift */; };
 		95601B6528A16ADA005FA61D /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B6428A16ADA005FA61D /* MessagesViewModel.swift */; };
+		9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828D28A2A06900F20331 /* UsersRepository.swift */; };
+		9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */; };
+		9586829228A2A8B400F20331 /* ActiveUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		95601B5F28A15D80005FA61D /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		95601B6228A16276005FA61D /* ChatsControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsControllerViewModel.swift; sourceTree = "<group>"; };
 		95601B6428A16ADA005FA61D /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		9586828D28A2A06900F20331 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryImpl.swift; sourceTree = "<group>"; };
+		9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewModel.swift; sourceTree = "<group>"; };
 		BBF5F6C06DC4DF32E7990D3B /* Pods_midTermProject___shio_andghuladze_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_midTermProject___shio_andghuladze_.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1896CDA0C26B039A9895B25 /* Pods-midTermProject  (shio andghuladze).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-midTermProject  (shio andghuladze).debug.xcconfig"; path = "Target Support Files/Pods-midTermProject  (shio andghuladze)/Pods-midTermProject  (shio andghuladze).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +179,7 @@
 			children = (
 				9558A63A289464350059D293 /* cell */,
 				9528B21F288F09AA0054F618 /* ActiveUsersController.swift */,
+				9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */,
 			);
 			path = active_users_screen;
 			sourceTree = "<group>";
@@ -290,6 +297,8 @@
 		95601B5028A13CFF005FA61D /* users_repository */ = {
 			isa = PBXGroup;
 			children = (
+				9586828D28A2A06900F20331 /* UsersRepository.swift */,
+				9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */,
 			);
 			path = users_repository;
 			sourceTree = "<group>";
@@ -467,8 +476,10 @@
 				9558A63828945B080059D293 /* TableViewAdapter.swift in Sources */,
 				9528B220288F09AA0054F618 /* ActiveUsersController.swift in Sources */,
 				955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */,
+				9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */,
 				9528B206288F08F20054F618 /* AppDelegate.swift in Sources */,
 				9558A615289432040059D293 /* EnterUserController.swift in Sources */,
+				9586829228A2A8B400F20331 /* ActiveUsersViewModel.swift in Sources */,
 				95601B5E28A15BC9005FA61D /* Observable.swift in Sources */,
 				95601B5C28A15BA6005FA61D /* LiveData.swift in Sources */,
 				95601B6028A15D80005FA61D /* Observer.swift in Sources */,
@@ -482,6 +493,7 @@
 				9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */,
 				95601B5528A13F22005FA61D /* EnterUserViewModel.swift in Sources */,
 				9558A61A28943CD00059D293 /* UserNameSavedDelegate.swift in Sources */,
+				9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */,
 				95601B5728A13F48005FA61D /* ChatsRepository.swift in Sources */,
 				9558A6312894539F0059D293 /* Message.swift in Sources */,
 				955D623D28955A0400EA0720 /* MessageCell.swift in Sources */,

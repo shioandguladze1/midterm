@@ -9,6 +9,7 @@ import UIKit
 
 class EnterUserController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
+    private let viewModel = EnterUserViewModel()
     var delegate: UserNameSavedDelegate?
     
     override func viewDidLoad() {
@@ -21,11 +22,18 @@ class EnterUserController: UIViewController {
         if userName.count <= 6 {
             showAlertWithOkButton(title: "Error", body: "User name length should be more than 6")
         }else{
-            UserDefaults.standard.set(userName, forKey: userNameKey)
-            UserDefaults.standard.set(UUID().uuidString, forKey: userUUIDdKey)
-            delegate?.onUserNameSaved(userName: userName)
-            dismiss(animated: true)
+            viewModel.createAndSaveUser(userName: userName, onSuccess: onUserSaved, onError: onError)
         }
+    }
+    
+    private func onUserSaved(userName: String){
+        self.delegate?.onUserNameSaved(userName: userName)
+        self.dismiss(animated: true)
+    }
+    
+    private func onError(error: Error){
+        print(error.localizedDescription)
+        self.showAlertWithOkButton(title: "Error", body: "Error creating user, try again")
     }
     
 }

@@ -10,10 +10,12 @@ import UIKit
 class ActiveUsersController: UIViewController {
     @IBOutlet weak var usersTableView: UITableView!
     private var adapter: TableViewAdapter<User, UsersTableViewCell>?
+    private let viewModel = ActiveUsersViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAdapter()
+        observeToUsers()
     }
     
     private func setUpAdapter(){
@@ -21,9 +23,21 @@ class ActiveUsersController: UIViewController {
         adapter?.onCellClick = navigateToMessages
     }
     
+    private func observeToUsers(){
+        viewModel.observeActiveUsers()
+        let observer = Observer<[User]>(){ users in
+            print("data set")
+            self.adapter?.setData(data: users)
+        }
+        viewModel.usersLivedata.addObserver(observer: observer)
+    }
+    
     private func navigateToMessages(data: User){
-        navigateToController(identifier: "MessagesController") { (vc: MessagesController) in
-            vc.title = data.name
+        if let user = currentUser{
+            navigateToController(identifier: "MessagesController") { (vc: MessagesController) in
+                vc.title = data.name
+                vc.chatMembers = [user, data]
+            }
         }
     }
 

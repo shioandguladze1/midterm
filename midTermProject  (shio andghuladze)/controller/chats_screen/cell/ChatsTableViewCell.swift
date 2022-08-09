@@ -19,10 +19,9 @@ class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
     
     func setUp(data: Chat?){
         selectionStyle = .none
-        let currentUserUUID = UserDefaults.standard.string(forKey: userUUIDdKey) ?? ""
-        chatTitleLabel.text = data?.users.getChatTitle(currentUserUUID: currentUserUUID)
+        chatTitleLabel.text = data?.users.getChatTitle()
         if let lastMessage = data?.messages.last{
-            var sender = lastMessage.sender.UUID == currentUserUUID ? "you" : lastMessage.sender.name
+            var sender = lastMessage.sender.UUID == currentUser?.UUID ? "you" : lastMessage.sender.name
             sender += ": "
             lastMessageLabel.text = sender + lastMessage.text
         }

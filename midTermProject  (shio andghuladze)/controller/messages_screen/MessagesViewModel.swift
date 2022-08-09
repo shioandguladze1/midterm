@@ -18,7 +18,7 @@ class MessagesViewModel{
             chat = Chat(users: chatMembers, messages: [])
         }
         if var c = chat{
-            let message = Message(text: message, sender: getCurrentUserRef(), parentChatId: c.id)
+            let message = Message(text: message, sender: currentUser!, parentChatId: c.id)
             c.messages.append(message)
             chatsRepository.updateChat(chat: c)
         }
