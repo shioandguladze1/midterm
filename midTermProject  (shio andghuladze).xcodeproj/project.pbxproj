@@ -31,6 +31,9 @@
 		9558A63E2894648C0059D293 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A63C2894648C0059D293 /* UsersTableViewCell.swift */; };
 		9558A63F2894648C0059D293 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558A63D2894648C0059D293 /* UsersTableViewCell.xib */; };
 		9558A6422894656F0059D293 /* TableViewAdapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A6412894656F0059D293 /* TableViewAdapterCell.swift */; };
+		955C0CED28A6420300948743 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CEC28A6420300948743 /* SplashScreenViewController.swift */; };
+		955C0CEF28A6424200948743 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CEE28A6424200948743 /* LogInViewController.swift */; };
+		955C0CF128A6425000948743 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CF028A6425000948743 /* RegistrationViewController.swift */; };
 		955D623D28955A0400EA0720 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D623B28955A0400EA0720 /* MessageCell.swift */; };
 		955D623E28955A0400EA0720 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955D623C28955A0400EA0720 /* MessageCell.xib */; };
 		955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D6240289565E700EA0720 /* PaddingLabel.swift */; };
@@ -75,6 +78,9 @@
 		9558A63C2894648C0059D293 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		9558A63D2894648C0059D293 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		9558A6412894656F0059D293 /* TableViewAdapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapterCell.swift; sourceTree = "<group>"; };
+		955C0CEC28A6420300948743 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		955C0CEE28A6424200948743 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		955C0CF028A6425000948743 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		955D623B28955A0400EA0720 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		955D623C28955A0400EA0720 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		955D6240289565E700EA0720 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 		9528B219288F09260054F618 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				955C0CEB28A641D100948743 /* splash_screen */,
+				955C0CE828A640A600948743 /* auth */,
 				9558A61F28944A690059D293 /* chats_screen */,
 				9558A613289431DC0059D293 /* enter_user_screen */,
 				9528B221288F09AF0054F618 /* messages_screen */,
@@ -258,6 +266,39 @@
 				9558A6412894656F0059D293 /* TableViewAdapterCell.swift */,
 			);
 			path = table_view;
+			sourceTree = "<group>";
+		};
+		955C0CE828A640A600948743 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				955C0CEA28A640B200948743 /* log_in */,
+				955C0CE928A640AC00948743 /* registration */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		955C0CE928A640AC00948743 /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				955C0CF028A6425000948743 /* RegistrationViewController.swift */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		955C0CEA28A640B200948743 /* log_in */ = {
+			isa = PBXGroup;
+			children = (
+				955C0CEE28A6424200948743 /* LogInViewController.swift */,
+			);
+			path = log_in;
+			sourceTree = "<group>";
+		};
+		955C0CEB28A641D100948743 /* splash_screen */ = {
+			isa = PBXGroup;
+			children = (
+				955C0CEC28A6420300948743 /* SplashScreenViewController.swift */,
+			);
+			path = splash_screen;
 			sourceTree = "<group>";
 		};
 		955D6236289547AB00EA0720 /* cell */ = {
@@ -468,14 +509,17 @@
 			files = (
 				9558A62F289453420059D293 /* Chat.swift in Sources */,
 				9558A618289436050059D293 /* ViewExtensions.swift in Sources */,
+				955C0CEF28A6424200948743 /* LogInViewController.swift in Sources */,
 				95601B6528A16ADA005FA61D /* MessagesViewModel.swift in Sources */,
 				9558A62128944A850059D293 /* ChatsScreenController.swift in Sources */,
 				9528B223288F09D00054F618 /* MessagesController.swift in Sources */,
 				9558A6422894656F0059D293 /* TableViewAdapterCell.swift in Sources */,
 				955D6243289590A300EA0720 /* CollectionExtensions.swift in Sources */,
+				955C0CF128A6425000948743 /* RegistrationViewController.swift in Sources */,
 				9558A63828945B080059D293 /* TableViewAdapter.swift in Sources */,
 				9528B220288F09AA0054F618 /* ActiveUsersController.swift in Sources */,
 				955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */,
+				955C0CED28A6420300948743 /* SplashScreenViewController.swift in Sources */,
 				9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */,
 				9528B206288F08F20054F618 /* AppDelegate.swift in Sources */,
 				9558A615289432040059D293 /* EnterUserController.swift in Sources */,

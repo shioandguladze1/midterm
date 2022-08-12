@@ -26,7 +26,6 @@ class ActiveUsersController: UIViewController {
     private func observeToUsers(){
         viewModel.observeActiveUsers()
         let observer = Observer<[User]>(){ users in
-            print("data set")
             self.adapter?.setData(data: users)
         }
         viewModel.usersLivedata.addObserver(observer: observer)
