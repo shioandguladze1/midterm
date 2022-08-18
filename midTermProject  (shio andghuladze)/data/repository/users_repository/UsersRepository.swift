@@ -10,7 +10,13 @@ import FirebaseDatabase
 
 protocol UsersRepository{
     
-    func saveUser(user: User, completionBlock: @escaping (Error?, DatabaseReference)-> Void)
+    func uploadUserImage(userUid: String, url: String, onResult: @escaping (Result)-> Void)
+    
+    func getUserInfo(userUid: String, onResult: @escaping (Result)-> Void)
+    
+    func deleteUserImage(pictureName: String)
+    
+    func saveUser(user: User, onResult: @escaping (Result)-> Void)
     
     func observeOnUsers(block: @escaping ([User])-> Void)
     

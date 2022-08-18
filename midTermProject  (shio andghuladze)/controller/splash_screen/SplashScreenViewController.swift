@@ -8,12 +8,27 @@
 import UIKit
 
 class SplashScreenViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.global().async {
+            sleep(3)
+            self.navigate()
+        }
+    }
+    
+    private func navigate(){
+        let destination = getNavDestination()
+        DispatchQueue.main.async {
+            self.navigateToController(identifier: destination) { (c: UIViewController) in }
+        }
     }
 
+    private func getNavDestination()-> String {
+        if currentUser == nil {
+            return "LogInViewController"
+        }else{
+            return "HomeScreenController"
+        }
+    }
 
 }

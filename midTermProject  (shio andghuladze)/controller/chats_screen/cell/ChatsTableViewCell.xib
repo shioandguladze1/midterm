@@ -16,14 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shio andghuladze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9k-gU-J0x">
-                        <rect key="frame" x="10" y="3" width="134" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you: ragaca teksti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9i-pV-eaD">
-                        <rect key="frame" x="10" y="26" width="200" height="14.5"/>
+                        <rect key="frame" x="49" y="29" width="200" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="Fw5-wX-2x5"/>
                         </constraints>
@@ -34,26 +28,49 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Ip-e2-Ubs">
                         <rect key="frame" x="295.5" y="7.5" width="19.5" height="29"/>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KbA-wv-EzK">
+                        <rect key="frame" x="5" y="6.5" width="34" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="KbA-wv-EzK" secondAttribute="height" multiplier="1:1" id="9CF-nh-7nR"/>
+                        </constraints>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WHm-4U-oJL">
+                        <rect key="frame" x="12" y="12" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shio andghuladze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9k-gU-J0x">
+                        <rect key="frame" x="49" y="6" width="134" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="g9i-pV-eaD" firstAttribute="leading" secondItem="P9k-gU-J0x" secondAttribute="leading" id="0j8-Ga-hsa"/>
                     <constraint firstItem="2Ip-e2-Ubs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6sK-ng-x8w"/>
-                    <constraint firstItem="P9k-gU-J0x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="8A0-aM-vF4"/>
+                    <constraint firstItem="P9k-gU-J0x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="8A0-aM-vF4"/>
+                    <constraint firstItem="P9k-gU-J0x" firstAttribute="leading" secondItem="KbA-wv-EzK" secondAttribute="trailing" constant="10" id="IfU-8L-W3l"/>
                     <constraint firstItem="g9i-pV-eaD" firstAttribute="top" secondItem="P9k-gU-J0x" secondAttribute="bottom" constant="2" id="J0C-qG-V96"/>
+                    <constraint firstItem="KbA-wv-EzK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="JNL-MH-8ay"/>
+                    <constraint firstItem="KbA-wv-EzK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Oef-bp-gGV"/>
                     <constraint firstAttribute="trailing" secondItem="2Ip-e2-Ubs" secondAttribute="trailing" constant="5" id="PQz-Qb-y0R"/>
-                    <constraint firstItem="P9k-gU-J0x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RCB-YA-nBp"/>
+                    <constraint firstItem="WHm-4U-oJL" firstAttribute="centerY" secondItem="KbA-wv-EzK" secondAttribute="centerY" id="PkQ-AS-zua"/>
+                    <constraint firstItem="WHm-4U-oJL" firstAttribute="centerX" secondItem="KbA-wv-EzK" secondAttribute="centerX" id="dBP-cY-mOx"/>
                     <constraint firstAttribute="bottom" secondItem="2Ip-e2-Ubs" secondAttribute="bottom" constant="5" id="nXE-Td-BaQ"/>
+                    <constraint firstItem="g9i-pV-eaD" firstAttribute="leading" secondItem="P9k-gU-J0x" secondAttribute="leading" id="sZZ-Xy-y0o"/>
+                    <constraint firstAttribute="bottom" secondItem="KbA-wv-EzK" secondAttribute="bottom" constant="5" id="wbf-5r-fcV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="chatTitleLabel" destination="P9k-gU-J0x" id="kvL-0H-jta"/>
                 <outlet property="lastMessageLabel" destination="g9i-pV-eaD" id="eO6-hq-i0G"/>
+                <outlet property="userImageIndicator" destination="WHm-4U-oJL" id="Uhc-hk-Xoi"/>
+                <outlet property="userImageView" destination="KbA-wv-EzK" id="ooV-P4-sih"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="61.607142857142854"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
     </resources>
 </document>

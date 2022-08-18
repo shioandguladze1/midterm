@@ -10,11 +10,13 @@ import Foundation
 struct User: Codable{
     let name: String
     let UUID: String
+    let imageUrl: String
     
     func toDictionary()-> NSDictionary{
         return [
             "name": name,
-            "UUID": UUID
+            "UUID": UUID,
+            "imageUrl": imageUrl
         ]
     }
 }

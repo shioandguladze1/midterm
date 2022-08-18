@@ -7,12 +7,49 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 
 class UsersRepositoryImpl: UsersRepository{
     let ref = Database.database().reference()
+    let storage = Storage.storage().reference()
     
-    func saveUser(user: User, completionBlock: @escaping (Error?, DatabaseReference)-> Void = {_, _ in}) {
-        ref.child(usersDirKey).child(user.UUID).setValue(user.toDictionary(), withCompletionBlock: completionBlock)
+    func uploadUserImage(userUid: String, url: String, onResult: @escaping (Result)-> Void){
+        guard let imageUrl = URL(string: url) else {
+            onResult(ErrorResult(errorMessage: "Invalid Url"))
+            return
+        }
+        
+        let pictureName = (url as NSString).lastPathComponent
+        let ref = storage.child(userPicturesDirKey + userUid + "/" + pictureName)
+        
+        ref.putFile(from: imageUrl) { metadata, error in
+            
+            ref.downloadURL { url, error in
+                generateResult(data: url?.absoluteString, error: error, onResult: onResult)
+            }
+            
+        }
+        
+    }
+    
+    func getUserInfo(userUid: String, onResult: @escaping (Result) -> Void) {
+        ref.child(usersDirKey).child(userUid).getData { error, snapshot in
+            let user = snapshot?.toObject(type: User.self)
+            generateResult(data: user, error: error, onResult: onResult)
+        }
+    }
+    
+    func deleteUserImage(pictureName: String){
+        let ref = storage.child(userPicturesDirKey + pictureName)
+        ref.delete(completion: nil)
+    }
+    
+    func saveUser(user: User, onResult: @escaping (Result)-> Void) {
+        ref.child(usersDirKey).child(user.UUID).setValue(user.toDictionary()) { error, ref in
+            
+            generateResult(data: Void(), error: error, onResult: onResult)
+            
+        }
     }
     
     func observeOnUsers(block: @escaping ([User]) -> Void) {

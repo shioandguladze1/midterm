@@ -46,4 +46,12 @@ class MessagesController: UIViewController {
             messagesTableview.scrollToRow(at: IndexPath(row: lastIndex, section: 0), at: .bottom, animated: true)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
 }

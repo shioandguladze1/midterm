@@ -17,9 +17,7 @@
 		9528B220288F09AA0054F618 /* ActiveUsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B21F288F09AA0054F618 /* ActiveUsersController.swift */; };
 		9528B223288F09D00054F618 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B222288F09D00054F618 /* MessagesController.swift */; };
 		9558A612289431D60059D293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A611289431D60059D293 /* Constants.swift */; };
-		9558A615289432040059D293 /* EnterUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A614289432040059D293 /* EnterUserController.swift */; };
 		9558A618289436050059D293 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A617289436050059D293 /* ViewExtensions.swift */; };
-		9558A61A28943CD00059D293 /* UserNameSavedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A61928943CD00059D293 /* UserNameSavedDelegate.swift */; };
 		9558A61E289444A80059D293 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9558A61D289444A80059D293 /* GoogleService-Info.plist */; };
 		9558A62128944A850059D293 /* ChatsScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A62028944A850059D293 /* ChatsScreenController.swift */; };
 		9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A628289451090059D293 /* ChatsTableViewCell.swift */; };
@@ -34,11 +32,13 @@
 		955C0CED28A6420300948743 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CEC28A6420300948743 /* SplashScreenViewController.swift */; };
 		955C0CEF28A6424200948743 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CEE28A6424200948743 /* LogInViewController.swift */; };
 		955C0CF128A6425000948743 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C0CF028A6425000948743 /* RegistrationViewController.swift */; };
+		955C471D28AD288C005CE05F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C471C28AD288C005CE05F /* RegistrationViewModel.swift */; };
+		955C472028AD2FBB005CE05F /* CredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C471F28AD2FBB005CE05F /* CredentialsValidator.swift */; };
+		955C472228AD4958005CE05F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C472128AD4958005CE05F /* LoginViewModel.swift */; };
 		955D623D28955A0400EA0720 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D623B28955A0400EA0720 /* MessageCell.swift */; };
 		955D623E28955A0400EA0720 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955D623C28955A0400EA0720 /* MessageCell.xib */; };
 		955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D6240289565E700EA0720 /* PaddingLabel.swift */; };
 		955D6243289590A300EA0720 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D6242289590A300EA0720 /* CollectionExtensions.swift */; };
-		95601B5528A13F22005FA61D /* EnterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5428A13F21005FA61D /* EnterUserViewModel.swift */; };
 		95601B5728A13F48005FA61D /* ChatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5628A13F48005FA61D /* ChatsRepository.swift */; };
 		95601B5928A13F56005FA61D /* ChatsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5828A13F56005FA61D /* ChatsRepositoryImpl.swift */; };
 		95601B5C28A15BA6005FA61D /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5B28A15BA6005FA61D /* LiveData.swift */; };
@@ -46,6 +46,10 @@
 		95601B6028A15D80005FA61D /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B5F28A15D80005FA61D /* Observer.swift */; };
 		95601B6328A16276005FA61D /* ChatsControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B6228A16276005FA61D /* ChatsControllerViewModel.swift */; };
 		95601B6528A16ADA005FA61D /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95601B6428A16ADA005FA61D /* MessagesViewModel.swift */; };
+		956D0EDD28A6871000DFA419 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EDC28A6871000DFA419 /* AuthRepository.swift */; };
+		956D0EDF28A6872000DFA419 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EDE28A6872000DFA419 /* AuthRepositoryImpl.swift */; };
+		956D0EE228A687FA00DFA419 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EE128A687FA00DFA419 /* Result.swift */; };
+		956D0EE528A6887700DFA419 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EE428A6887700DFA419 /* NetworkManager.swift */; };
 		9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828D28A2A06900F20331 /* UsersRepository.swift */; };
 		9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */; };
 		9586829228A2A8B400F20331 /* ActiveUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */; };
@@ -64,9 +68,7 @@
 		9528B21F288F09AA0054F618 /* ActiveUsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersController.swift; sourceTree = "<group>"; };
 		9528B222288F09D00054F618 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		9558A611289431D60059D293 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9558A614289432040059D293 /* EnterUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserController.swift; sourceTree = "<group>"; };
 		9558A617289436050059D293 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		9558A61928943CD00059D293 /* UserNameSavedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameSavedDelegate.swift; sourceTree = "<group>"; };
 		9558A61D289444A80059D293 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9558A62028944A850059D293 /* ChatsScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreenController.swift; sourceTree = "<group>"; };
 		9558A628289451090059D293 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,11 +83,13 @@
 		955C0CEC28A6420300948743 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		955C0CEE28A6424200948743 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		955C0CF028A6425000948743 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		955C471C28AD288C005CE05F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		955C471F28AD2FBB005CE05F /* CredentialsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidator.swift; sourceTree = "<group>"; };
+		955C472128AD4958005CE05F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		955D623B28955A0400EA0720 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		955D623C28955A0400EA0720 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		955D6240289565E700EA0720 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		955D6242289590A300EA0720 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
-		95601B5428A13F21005FA61D /* EnterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserViewModel.swift; sourceTree = "<group>"; };
 		95601B5628A13F48005FA61D /* ChatsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsRepository.swift; sourceTree = "<group>"; };
 		95601B5828A13F56005FA61D /* ChatsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsRepositoryImpl.swift; sourceTree = "<group>"; };
 		95601B5B28A15BA6005FA61D /* LiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
@@ -93,6 +97,10 @@
 		95601B5F28A15D80005FA61D /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		95601B6228A16276005FA61D /* ChatsControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsControllerViewModel.swift; sourceTree = "<group>"; };
 		95601B6428A16ADA005FA61D /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		956D0EDC28A6871000DFA419 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		956D0EDE28A6872000DFA419 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
+		956D0EE128A687FA00DFA419 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		956D0EE428A6887700DFA419 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9586828D28A2A06900F20331 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryImpl.swift; sourceTree = "<group>"; };
 		9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewModel.swift; sourceTree = "<group>"; };
@@ -155,7 +163,6 @@
 				955C0CEB28A641D100948743 /* splash_screen */,
 				955C0CE828A640A600948743 /* auth */,
 				9558A61F28944A690059D293 /* chats_screen */,
-				9558A613289431DC0059D293 /* enter_user_screen */,
 				9528B221288F09AF0054F618 /* messages_screen */,
 				9528B21E288F098A0054F618 /* active_users_screen */,
 				9528B21B288F09590054F618 /* bottom_nav_controller */,
@@ -202,16 +209,6 @@
 			path = messages_screen;
 			sourceTree = "<group>";
 		};
-		9558A613289431DC0059D293 /* enter_user_screen */ = {
-			isa = PBXGroup;
-			children = (
-				95601B5428A13F21005FA61D /* EnterUserViewModel.swift */,
-				95601B5228A13EEE005FA61D /* delegate */,
-				9558A614289432040059D293 /* EnterUserController.swift */,
-			);
-			path = enter_user_screen;
-			sourceTree = "<group>";
-		};
 		9558A616289435F00059D293 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +240,7 @@
 		9558A63528945AEB0059D293 /* utill */ = {
 			isa = PBXGroup;
 			children = (
+				955C471E28AD2FAD005CE05F /* validator */,
 				95601B5A28A15B96005FA61D /* live_data */,
 				955D623F289565D200EA0720 /* view */,
 				9558A640289465440059D293 /* table_view */,
@@ -281,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				955C0CF028A6425000948743 /* RegistrationViewController.swift */,
+				955C471C28AD288C005CE05F /* RegistrationViewModel.swift */,
 			);
 			path = registration;
 			sourceTree = "<group>";
@@ -289,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				955C0CEE28A6424200948743 /* LogInViewController.swift */,
+				955C472128AD4958005CE05F /* LoginViewModel.swift */,
 			);
 			path = log_in;
 			sourceTree = "<group>";
@@ -299,6 +299,14 @@
 				955C0CEC28A6420300948743 /* SplashScreenViewController.swift */,
 			);
 			path = splash_screen;
+			sourceTree = "<group>";
+		};
+		955C471E28AD2FAD005CE05F /* validator */ = {
+			isa = PBXGroup;
+			children = (
+				955C471F28AD2FBB005CE05F /* CredentialsValidator.swift */,
+			);
+			path = validator;
 			sourceTree = "<group>";
 		};
 		955D6236289547AB00EA0720 /* cell */ = {
@@ -321,6 +329,8 @@
 		95601B4C28A13CB5005FA61D /* data */ = {
 			isa = PBXGroup;
 			children = (
+				956D0EE328A6886700DFA419 /* network */,
+				956D0EE028A687E800DFA419 /* model */,
 				95601B4D28A13CC9005FA61D /* repository */,
 			);
 			path = data;
@@ -329,6 +339,7 @@
 		95601B4D28A13CC9005FA61D /* repository */ = {
 			isa = PBXGroup;
 			children = (
+				956D0EDB28A686F000DFA419 /* auth_repository */,
 				95601B5128A13D14005FA61D /* chats_repository */,
 				95601B5028A13CFF005FA61D /* users_repository */,
 			);
@@ -353,14 +364,6 @@
 			path = chats_repository;
 			sourceTree = "<group>";
 		};
-		95601B5228A13EEE005FA61D /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				9558A61928943CD00059D293 /* UserNameSavedDelegate.swift */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
 		95601B5A28A15B96005FA61D /* live_data */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +372,31 @@
 				95601B5F28A15D80005FA61D /* Observer.swift */,
 			);
 			path = live_data;
+			sourceTree = "<group>";
+		};
+		956D0EDB28A686F000DFA419 /* auth_repository */ = {
+			isa = PBXGroup;
+			children = (
+				956D0EDC28A6871000DFA419 /* AuthRepository.swift */,
+				956D0EDE28A6872000DFA419 /* AuthRepositoryImpl.swift */,
+			);
+			path = auth_repository;
+			sourceTree = "<group>";
+		};
+		956D0EE028A687E800DFA419 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				956D0EE128A687FA00DFA419 /* Result.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		956D0EE328A6886700DFA419 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				956D0EE428A6887700DFA419 /* NetworkManager.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 		B2DE8EF23608A1F13D4DC17C /* Frameworks */ = {
@@ -507,6 +535,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956D0EE528A6887700DFA419 /* NetworkManager.swift in Sources */,
+				955C471D28AD288C005CE05F /* RegistrationViewModel.swift in Sources */,
 				9558A62F289453420059D293 /* Chat.swift in Sources */,
 				9558A618289436050059D293 /* ViewExtensions.swift in Sources */,
 				955C0CEF28A6424200948743 /* LogInViewController.swift in Sources */,
@@ -516,15 +546,17 @@
 				9558A6422894656F0059D293 /* TableViewAdapterCell.swift in Sources */,
 				955D6243289590A300EA0720 /* CollectionExtensions.swift in Sources */,
 				955C0CF128A6425000948743 /* RegistrationViewController.swift in Sources */,
+				956D0EE228A687FA00DFA419 /* Result.swift in Sources */,
+				955C472028AD2FBB005CE05F /* CredentialsValidator.swift in Sources */,
 				9558A63828945B080059D293 /* TableViewAdapter.swift in Sources */,
 				9528B220288F09AA0054F618 /* ActiveUsersController.swift in Sources */,
 				955D6241289565E700EA0720 /* PaddingLabel.swift in Sources */,
 				955C0CED28A6420300948743 /* SplashScreenViewController.swift in Sources */,
 				9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */,
 				9528B206288F08F20054F618 /* AppDelegate.swift in Sources */,
-				9558A615289432040059D293 /* EnterUserController.swift in Sources */,
 				9586829228A2A8B400F20331 /* ActiveUsersViewModel.swift in Sources */,
 				95601B5E28A15BC9005FA61D /* Observable.swift in Sources */,
+				956D0EDD28A6871000DFA419 /* AuthRepository.swift in Sources */,
 				95601B5C28A15BA6005FA61D /* LiveData.swift in Sources */,
 				95601B6028A15D80005FA61D /* Observer.swift in Sources */,
 				9528B208288F08F20054F618 /* SceneDelegate.swift in Sources */,
@@ -535,11 +567,11 @@
 				95601B6328A16276005FA61D /* ChatsControllerViewModel.swift in Sources */,
 				9558A612289431D60059D293 /* Constants.swift in Sources */,
 				9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */,
-				95601B5528A13F22005FA61D /* EnterUserViewModel.swift in Sources */,
-				9558A61A28943CD00059D293 /* UserNameSavedDelegate.swift in Sources */,
+				956D0EDF28A6872000DFA419 /* AuthRepositoryImpl.swift in Sources */,
 				9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */,
 				95601B5728A13F48005FA61D /* ChatsRepository.swift in Sources */,
 				9558A6312894539F0059D293 /* Message.swift in Sources */,
+				955C472228AD4958005CE05F /* LoginViewModel.swift in Sources */,
 				955D623D28955A0400EA0720 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

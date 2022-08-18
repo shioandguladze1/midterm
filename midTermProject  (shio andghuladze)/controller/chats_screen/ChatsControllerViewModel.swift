@@ -24,4 +24,10 @@ class ChatsControllerViewModel{
         }
     }
     
+    func logOut(){
+        UserDefaults.standard.removeObject(forKey: userNameKey)
+        UserDefaults.standard.removeObject(forKey: userUUIDdKey)
+        UserDefaults.standard.removeObject(forKey: userImageUrlKey)
+    }
+    
 }
