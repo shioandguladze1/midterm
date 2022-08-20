@@ -59,15 +59,15 @@ class LoginViewModel{
             return
         }
         
-        usersRepository.getUserInfo(userUid: userUid) {[weak self] r in
+        usersRepository.getUserInfo(userUid: userUid) { r in
             parseResult(result: r) { (user: User) in
                 currentUser = user
-                self?.saveUserInfo(userName: user.name, userUid: user.UUID, userImageUrl: user.imageUrl)
+                self.saveUserInfo(userName: user.name, userUid: user.UUID, userImageUrl: user.imageUrl)
                 onSuccess()
-                self?.semaphore.signal()
-            } onError: {[weak self] message in
-                self?.errorLiveData.setData(data: message)
-                self?.semaphore.signal()
+                self.semaphore.signal()
+            } onError: { message in
+                self.errorLiveData.setData(data: message)
+                self.semaphore.signal()
             }
         }
     }

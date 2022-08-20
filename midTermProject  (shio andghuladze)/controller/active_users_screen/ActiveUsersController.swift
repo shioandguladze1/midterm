@@ -9,13 +9,25 @@ import UIKit
 
 class ActiveUsersController: UIViewController {
     @IBOutlet weak var usersTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     private var adapter: TableViewAdapter<User, UsersTableViewCell>?
     private let viewModel = ActiveUsersViewModel()
+    private let searchBarDelegate = GeneralSearchBarDelegate<User> { user, searchValue in
+        user.name.lowercased().contains(searchValue.lowercased())
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAdapter()
         observeToUsers()
+        setUpSearchBar()
+    }
+    
+    private func setUpSearchBar(){
+        searchBarDelegate.onValueChanged = { users in
+            self.adapter?.setData(data: users)
+        }
+        searchBar.delegate = searchBarDelegate
     }
     
     private func setUpAdapter(){
@@ -27,6 +39,7 @@ class ActiveUsersController: UIViewController {
         viewModel.observeActiveUsers()
         let observer = Observer<[User]>(){ users in
             self.adapter?.setData(data: users)
+            self.searchBarDelegate.updateInitialList(list: users)
         }
         viewModel.usersLivedata.addObserver(observer: observer)
     }

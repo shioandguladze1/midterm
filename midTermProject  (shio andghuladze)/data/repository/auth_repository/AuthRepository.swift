@@ -12,6 +12,8 @@ protocol AuthRepository{
     
     func createUser(email: String, password: String, onResult: @escaping (Result)-> Void)
     
+    func signOut()
+    
     func deleteUser(user: FirebaseAuth.User)
     
     func logIn(email: String, password: String, onResult: @escaping (Result)-> Void)

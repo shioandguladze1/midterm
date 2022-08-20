@@ -8,6 +8,8 @@
 import Foundation
 
 class ChatsControllerViewModel{
+    private let authRepository: AuthRepository = AuthRepositoryImpl()
+    
     init(){
         observeUserChats()
     }
@@ -28,6 +30,8 @@ class ChatsControllerViewModel{
         UserDefaults.standard.removeObject(forKey: userNameKey)
         UserDefaults.standard.removeObject(forKey: userUUIDdKey)
         UserDefaults.standard.removeObject(forKey: userImageUrlKey)
+        currentUser = nil
+        authRepository.signOut()
     }
     
 }

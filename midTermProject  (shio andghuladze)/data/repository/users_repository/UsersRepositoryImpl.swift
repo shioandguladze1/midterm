@@ -34,7 +34,7 @@ class UsersRepositoryImpl: UsersRepository{
     
     func getUserInfo(userUid: String, onResult: @escaping (Result) -> Void) {
         ref.child(usersDirKey).child(userUid).getData { error, snapshot in
-            let user = snapshot?.toObject(type: User.self)
+            let user = snapshot?.toObject(type: User.self) ?? snapshot?.children.convertToObjectArray(type: User.self).filter { $0.UUID == userUid }[0]
             generateResult(data: user, error: error, onResult: onResult)
         }
     }

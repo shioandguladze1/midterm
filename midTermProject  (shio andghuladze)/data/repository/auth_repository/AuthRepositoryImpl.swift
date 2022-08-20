@@ -24,6 +24,10 @@ class AuthRepositoryImpl: AuthRepository{
         user.delete()
     }
     
+    func signOut() {
+        try? Auth.auth().signOut()
+    }
+    
     func logIn(email: String, password: String, onResult: @escaping (Result)-> Void) {
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in

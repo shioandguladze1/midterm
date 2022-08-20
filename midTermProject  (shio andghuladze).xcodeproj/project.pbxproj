@@ -18,7 +18,6 @@
 		9528B223288F09D00054F618 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528B222288F09D00054F618 /* MessagesController.swift */; };
 		9558A612289431D60059D293 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A611289431D60059D293 /* Constants.swift */; };
 		9558A618289436050059D293 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A617289436050059D293 /* ViewExtensions.swift */; };
-		9558A61E289444A80059D293 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9558A61D289444A80059D293 /* GoogleService-Info.plist */; };
 		9558A62128944A850059D293 /* ChatsScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A62028944A850059D293 /* ChatsScreenController.swift */; };
 		9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9558A628289451090059D293 /* ChatsTableViewCell.swift */; };
 		9558A62B289451090059D293 /* ChatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9558A629289451090059D293 /* ChatsTableViewCell.xib */; };
@@ -50,6 +49,8 @@
 		956D0EDF28A6872000DFA419 /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EDE28A6872000DFA419 /* AuthRepositoryImpl.swift */; };
 		956D0EE228A687FA00DFA419 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EE128A687FA00DFA419 /* Result.swift */; };
 		956D0EE528A6887700DFA419 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D0EE428A6887700DFA419 /* NetworkManager.swift */; };
+		9576084B28B10957005048F8 /* GeneralSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576084A28B10957005048F8 /* GeneralSearchBarDelegate.swift */; };
+		9576084F28B1173E005048F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9576084E28B1173E005048F8 /* GoogleService-Info.plist */; };
 		9586828E28A2A06900F20331 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828D28A2A06900F20331 /* UsersRepository.swift */; };
 		9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */; };
 		9586829228A2A8B400F20331 /* ActiveUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */; };
@@ -69,7 +70,6 @@
 		9528B222288F09D00054F618 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		9558A611289431D60059D293 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9558A617289436050059D293 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		9558A61D289444A80059D293 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9558A62028944A850059D293 /* ChatsScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreenController.swift; sourceTree = "<group>"; };
 		9558A628289451090059D293 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
 		9558A629289451090059D293 /* ChatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsTableViewCell.xib; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		956D0EDE28A6872000DFA419 /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
 		956D0EE128A687FA00DFA419 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		956D0EE428A6887700DFA419 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9576084A28B10957005048F8 /* GeneralSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSearchBarDelegate.swift; sourceTree = "<group>"; };
+		9576084E28B1173E005048F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9586828D28A2A06900F20331 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		9586828F28A2A07700F20331 /* UsersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryImpl.swift; sourceTree = "<group>"; };
 		9586829128A2A8B400F20331 /* ActiveUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUsersViewModel.swift; sourceTree = "<group>"; };
@@ -141,9 +143,9 @@
 		9528B204288F08F20054F618 /* midTermProject  (shio andghuladze) */ = {
 			isa = PBXGroup;
 			children = (
+				9576084E28B1173E005048F8 /* GoogleService-Info.plist */,
 				95601B4C28A13CB5005FA61D /* data */,
 				9558A63528945AEB0059D293 /* utill */,
-				9558A61D289444A80059D293 /* GoogleService-Info.plist */,
 				9558A616289435F00059D293 /* extensions */,
 				9528B21A288F09300054F618 /* model */,
 				9528B219288F09260054F618 /* controller */,
@@ -240,6 +242,7 @@
 		9558A63528945AEB0059D293 /* utill */ = {
 			isa = PBXGroup;
 			children = (
+				9576084928B10941005048F8 /* search_bar */,
 				955C471E28AD2FAD005CE05F /* validator */,
 				95601B5A28A15B96005FA61D /* live_data */,
 				955D623F289565D200EA0720 /* view */,
@@ -399,6 +402,14 @@
 			path = network;
 			sourceTree = "<group>";
 		};
+		9576084928B10941005048F8 /* search_bar */ = {
+			isa = PBXGroup;
+			children = (
+				9576084A28B10957005048F8 /* GeneralSearchBarDelegate.swift */,
+			);
+			path = search_bar;
+			sourceTree = "<group>";
+		};
 		B2DE8EF23608A1F13D4DC17C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,10 +490,10 @@
 				9558A62B289451090059D293 /* ChatsTableViewCell.xib in Resources */,
 				9528B212288F08F30054F618 /* LaunchScreen.storyboard in Resources */,
 				9558A63F2894648C0059D293 /* UsersTableViewCell.xib in Resources */,
-				9558A61E289444A80059D293 /* GoogleService-Info.plist in Resources */,
 				9528B20F288F08F30054F618 /* Assets.xcassets in Resources */,
 				955D623E28955A0400EA0720 /* MessageCell.xib in Resources */,
 				9528B20D288F08F20054F618 /* Main.storyboard in Resources */,
+				9576084F28B1173E005048F8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +578,7 @@
 				95601B6328A16276005FA61D /* ChatsControllerViewModel.swift in Sources */,
 				9558A612289431D60059D293 /* Constants.swift in Sources */,
 				9558A62A289451090059D293 /* ChatsTableViewCell.swift in Sources */,
+				9576084B28B10957005048F8 /* GeneralSearchBarDelegate.swift in Sources */,
 				956D0EDF28A6872000DFA419 /* AuthRepositoryImpl.swift in Sources */,
 				9586829028A2A07700F20331 /* UsersRepositoryImpl.swift in Sources */,
 				95601B5728A13F48005FA61D /* ChatsRepository.swift in Sources */,

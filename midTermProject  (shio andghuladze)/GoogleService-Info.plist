@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>92258929675-45hsgn1mu7bcibuna3iev1ioju0dd80f.apps.googleusercontent.com</string>
+	<string>58915488541-err0it4026fb9bgst2kp0t8achuhite6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.92258929675-45hsgn1mu7bcibuna3iev1ioju0dd80f</string>
+	<string>com.googleusercontent.apps.58915488541-err0it4026fb9bgst2kp0t8achuhite6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAnAAGRlY_jANxvXyA_h9jS2pNXfFJAKWo</string>
+	<string>AIzaSyCbVGUvFNw8OBWjZYno4fPRVCYD0uo9vH8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>92258929675</string>
+	<string>58915488541</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>n.midTermProject---shio-andghuladze-</string>
 	<key>PROJECT_ID</key>
-	<string>iosbootcamp-e7af5</string>
+	<string>iosbootcampnew</string>
 	<key>STORAGE_BUCKET</key>
-	<string>iosbootcamp-e7af5.appspot.com</string>
+	<string>iosbootcampnew.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:92258929675:ios:b8bb048f0c1e26f7964b0e</string>
+	<string>1:58915488541:ios:2b0427454650e388c897f4</string>
 	<key>DATABASE_URL</key>
-	<string>https://iosbootcamp-e7af5-default-rtdb.europe-west1.firebasedatabase.app</string>
+	<string>https://iosbootcampnew-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>
