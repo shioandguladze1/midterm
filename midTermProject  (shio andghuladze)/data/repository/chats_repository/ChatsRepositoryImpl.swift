@@ -19,7 +19,11 @@ class ChatsRepositoryImpl: ChatsRepository{
     }
     
     func updateChat(chat: Chat) {
-        ref.child(chatsDirKey).child(chat.id).setValue(chat.toDictionary())
+        guard let dict = chat.toDictionary() else {
+            return
+        }
+        
+        ref.child(chatsDirKey).child(chat.id).setValue(dict)
     }
     
     func observeChatMessages(chatId: String, closure: @escaping (Chat)-> Void) {

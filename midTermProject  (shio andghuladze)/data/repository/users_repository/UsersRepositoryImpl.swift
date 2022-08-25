@@ -45,7 +45,12 @@ class UsersRepositoryImpl: UsersRepository{
     }
     
     func saveUser(user: User, onResult: @escaping (Result)-> Void) {
-        ref.child(usersDirKey).child(user.UUID).setValue(user.toDictionary()) { error, ref in
+        guard let dict = user.toDictionary() else {
+            onResult(ErrorResult(errorMessage: "Could not convert \(user) to dictionary"))
+            return
+        }
+        
+        ref.child(usersDirKey).child(user.UUID).setValue(dict) { error, ref in
             
             generateResult(data: Void(), error: error, onResult: onResult)
             
