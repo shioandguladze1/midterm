@@ -26,7 +26,7 @@ class MessageCell: UITableViewCell, TableViewAdapterCell {
     func setUp(data: Message?) {
         if subviews.count > 0 { resetConstraints() }
         setUpLabel()
-        if let currentUserUUID = UserDefaults.standard.string(forKey: userUUIDdKey){
+        if let currentUserUUID = UserDefaults.standard.user?.UUID{
             if data?.sender.UUID == currentUserUUID{ setUpAsSent() } else { setUpAsReceived() }
         }
         messageLabel.text = data?.text

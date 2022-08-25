@@ -42,7 +42,7 @@ class ChatsScreenController: UIViewController {
         userImageView.layer.borderColor = CGColor(red: 0, green: 0, blue: 255, alpha: 1)
         userImageView.layer.cornerRadius = 20
         
-        guard let user = currentUser else {
+        guard let user = UserDefaults.standard.user else {
             showAlertWithOkButton(title: "Error", body: "There was error loading user data")
             navigateToController(identifier: "LogInViewController") { (c: UIViewController) in }
             return

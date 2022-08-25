@@ -13,7 +13,7 @@ class ActiveUsersViewModel{
     
     func observeActiveUsers(){
         usersRepository.observeOnUsers { users in
-            let usersWithoutCurrentUser = users.filter{ $0.UUID != currentUser?.UUID }
+            let usersWithoutCurrentUser = users.filter{ $0.UUID != UserDefaults.standard.user?.UUID }
             self.usersLivedata.setData(data: usersWithoutCurrentUser)
         }
     }

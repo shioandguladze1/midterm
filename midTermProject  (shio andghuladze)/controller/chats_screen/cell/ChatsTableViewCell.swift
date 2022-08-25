@@ -30,7 +30,7 @@ class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
 
         chatTitleLabel.text = data.users.getChatTitle()
         if let lastMessage = data.messages.last{
-            var sender = lastMessage.sender.UUID == currentUser?.UUID ? "you" : lastMessage.sender.name
+            var sender = lastMessage.sender.UUID == UserDefaults.standard.user?.UUID ? "you" : lastMessage.sender.name
             sender += ": "
             lastMessageLabel.text = sender + lastMessage.text
         }
@@ -45,7 +45,7 @@ class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
         }
         
         userImageView.contentMode = .scaleAspectFit
-        let otherUsers = users.filter { $0.UUID != currentUser?.UUID }
+        let otherUsers = users.filter { $0.UUID != UserDefaults.standard.user?.UUID }
         if otherUsers.count == 1 {
             userImageView.image = nil
             userImageIndicator.startAnimating()

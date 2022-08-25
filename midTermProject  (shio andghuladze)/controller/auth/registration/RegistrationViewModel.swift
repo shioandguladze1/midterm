@@ -127,10 +127,7 @@ class RegistrationViewModel{
             return
         }
 
-        UserDefaults.standard.set(userName, forKey: userNameKey)
-        UserDefaults.standard.set(user.uid, forKey: userUUIDdKey)
-        UserDefaults.standard.set(imagePath, forKey: userImageUrlKey)
-        currentUser = User(name: userName, UUID: user.uid, imageUrl: imagePath)
+        UserDefaults.standard.user = User(name: userName, UUID: user.uid, imageUrl: imagePath)
         onFinish()
         semaphore.signal()
     }

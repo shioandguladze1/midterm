@@ -61,8 +61,7 @@ class LoginViewModel{
         
         usersRepository.getUserInfo(userUid: userUid) { r in
             parseResult(result: r) { (user: User) in
-                currentUser = user
-                self.saveUserInfo(userName: user.name, userUid: user.UUID, userImageUrl: user.imageUrl)
+                UserDefaults.standard.user = user
                 onSuccess()
                 self.semaphore.signal()
             } onError: { message in
@@ -70,12 +69,6 @@ class LoginViewModel{
                 self.semaphore.signal()
             }
         }
-    }
-    
-    private func saveUserInfo(userName: String, userUid: String, userImageUrl: String){
-        UserDefaults.standard.set(userName, forKey: userNameKey)
-        UserDefaults.standard.set(userUid, forKey: userUUIDdKey)
-        UserDefaults.standard.set(userImageUrl, forKey: userImageUrlKey)
     }
     
 }

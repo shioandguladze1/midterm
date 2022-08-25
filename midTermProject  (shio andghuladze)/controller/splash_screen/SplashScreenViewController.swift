@@ -24,7 +24,7 @@ class SplashScreenViewController: UIViewController {
     }
 
     private func getNavDestination()-> String {
-        if currentUser == nil {
+        if UserDefaults.standard.user == nil {
             return "LogInViewController"
         }else{
             return "HomeScreenController"

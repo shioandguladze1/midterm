@@ -13,7 +13,7 @@ extension Array where Element == User{
     func getChatTitle()-> String{
         var title = ""
         forEach{user in
-            if currentUser?.UUID != user.UUID{
+            if UserDefaults.standard.user?.UUID != user.UUID{
                 title += user.name + ", "
             }
         }

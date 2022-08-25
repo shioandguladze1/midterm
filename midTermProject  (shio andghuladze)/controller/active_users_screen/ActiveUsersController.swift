@@ -45,7 +45,7 @@ class ActiveUsersController: UIViewController {
     }
     
     private func navigateToMessages(data: User){
-        if let user = currentUser{
+        if let user = UserDefaults.standard.user{
             navigateToController(identifier: "MessagesController") { (vc: MessagesController) in
                 vc.title = data.name
                 vc.chatMembers = [user, data]

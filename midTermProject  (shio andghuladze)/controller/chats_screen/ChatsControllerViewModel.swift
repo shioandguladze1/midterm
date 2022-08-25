@@ -19,7 +19,7 @@ class ChatsControllerViewModel{
     
     func observeUserChats(){
         chatsRepository.observeUserChats { chats in
-            if let user = currentUser{
+            if let user = UserDefaults.standard.user {
                 let userChats = chats.filter { $0.id.contains(user.UUID) }
                 self.chatsLiveData.setData(data: userChats)
             }
@@ -27,10 +27,7 @@ class ChatsControllerViewModel{
     }
     
     func logOut(){
-        UserDefaults.standard.removeObject(forKey: userNameKey)
-        UserDefaults.standard.removeObject(forKey: userUUIDdKey)
-        UserDefaults.standard.removeObject(forKey: userImageUrlKey)
-        currentUser = nil
+        UserDefaults.standard.user = nil
         authRepository.signOut()
     }
     
