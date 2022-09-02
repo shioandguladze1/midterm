@@ -11,7 +11,7 @@ protocol Observable{
     
     associatedtype T
     
-    func addObserver(observer: Observer<T>)
+    func addObserver(observer: Observer<T>, lifeCycle: UILifeCycle)
     
     func removeObserver(observer: Observer<T>)
     

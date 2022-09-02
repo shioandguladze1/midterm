@@ -45,3 +45,16 @@ extension UserDefaults{
         case User = "currentUser"
     }
 }
+
+extension Encodable {
+    
+    func toDictionary()-> [String: Any]?{
+        let data = try? (JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any]
+        guard let data = data else {
+            print("Could not encode object - " + String(describing: self))
+            return nil
+        }
+        return data
+    }
+    
+}

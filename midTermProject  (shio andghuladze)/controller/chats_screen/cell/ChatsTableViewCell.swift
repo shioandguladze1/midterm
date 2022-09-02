@@ -50,8 +50,8 @@ class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
             userImageView.image = nil
             userImageIndicator.startAnimating()
             userImageView.contentMode = .scaleAspectFill
-            getImage(imageUrl: otherUsers[0].imageUrl) { r in
-                parseResult(result: r) { (image: UIImage) in
+            NetworkManger.getImage(imageUrl: otherUsers[0].imageUrl) { r in
+                NetworkManger.parseResult(result: r) { (image: UIImage) in
                     DispatchQueue.main.async {
                         self.cachedImage = image
                         self.userImageView.image = image

@@ -9,6 +9,8 @@ import Foundation
 import FirebaseDatabase
 
 class ChatsRepositoryImpl: ChatsRepository{
+    static let shared: ChatsRepository = ChatsRepositoryImpl()
+    
     let ref = Database.database().reference()
     
     func observeUserChats(closure: @escaping ([Chat])-> Void) {
@@ -19,7 +21,11 @@ class ChatsRepositoryImpl: ChatsRepository{
     }
     
     func updateChat(chat: Chat) {
-        ref.child(chatsDirKey).child(chat.id).setValue(chat.toDictionary())
+        guard let dict = chat.toDictionary() else {
+            return
+        }
+        
+        ref.child(chatsDirKey).child(chat.id).setValue(dict)
     }
     
     func observeChatMessages(chatId: String, closure: @escaping (Chat)-> Void) {

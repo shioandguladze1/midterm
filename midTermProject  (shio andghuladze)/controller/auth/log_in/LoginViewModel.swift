@@ -9,8 +9,8 @@ import Foundation
 
 class LoginViewModel{
     private let semaphore = DispatchSemaphore(value: 1)
-    private let authRepository: AuthRepository = AuthRepositoryImpl()
-    private let usersRepository: UsersRepository = UsersRepositoryImpl()
+    private let authRepository = AuthRepositoryImpl.shared
+    private let usersRepository = UsersRepositoryImpl.shared
     private let validator = CredentialsValidator()
     private var userUid: String?
     
@@ -39,7 +39,7 @@ class LoginViewModel{
         }
         
         authRepository.logIn(email: email, password: password) { r in
-            parseResult(result: r) { (userUid: String) in
+            NetworkManger.parseResult(result: r) { (userUid: String) in
                 self.userUid = userUid
                 self.semaphore.signal()
             } onError: { message in
@@ -60,7 +60,7 @@ class LoginViewModel{
         }
         
         usersRepository.getUserInfo(userUid: userUid) { r in
-            parseResult(result: r) { (user: User) in
+            NetworkManger.parseResult(result: r) { (user: User) in
                 UserDefaults.standard.user = user
                 onSuccess()
                 self.semaphore.signal()

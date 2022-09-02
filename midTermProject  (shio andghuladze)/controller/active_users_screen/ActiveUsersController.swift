@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActiveUsersController: UIViewController {
+class ActiveUsersController: BaseViewController {
     @IBOutlet weak var usersTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     private var adapter: TableViewAdapter<User, UsersTableViewCell>?
@@ -41,7 +41,7 @@ class ActiveUsersController: UIViewController {
             self.adapter?.setData(data: users)
             self.searchBarDelegate.updateInitialList(list: users)
         }
-        viewModel.usersLivedata.addObserver(observer: observer)
+        viewModel.usersLivedata.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
     
     private func navigateToMessages(data: User){

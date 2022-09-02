@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: BaseViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     private let imagePicker = UIImagePickerController()
     private let viewModel = RegistrationViewModel()
@@ -34,7 +34,7 @@ class RegistrationViewController: UIViewController {
                 self?.showAlertWithOkButton(title: "Error", body: error)
             }
         }
-        viewModel.errorLiveData.addObserver(observer: observer)
+        viewModel.errorLiveData.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
     
     private func styleImageView(){

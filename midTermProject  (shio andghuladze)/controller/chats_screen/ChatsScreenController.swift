@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseDatabase
 
-class ChatsScreenController: UIViewController {
+class ChatsScreenController: BaseViewController {
     @IBOutlet weak var chatsTableView: UITableView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -19,6 +19,11 @@ class ChatsScreenController: UIViewController {
     private let viewModel = ChatsControllerViewModel()
     private let searchBarDelegate = GeneralSearchBarDelegate<Chat> { chat, searchValue in
         chat.users.getChatTitle().lowercased().contains(searchValue.lowercased())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(self.hashValue)
     }
     
     override func viewDidLoad() {
@@ -50,8 +55,8 @@ class ChatsScreenController: UIViewController {
         
         imageActivityIndicator.startAnimating()
         userNameLabel.text = user.name
-        getImage(imageUrl: user.imageUrl) { [weak self] r in
-            parseResult(result: r) { (image: UIImage) in
+        NetworkManger.getImage(imageUrl: user.imageUrl) { [weak self] r in
+            NetworkManger.parseResult(result: r) { (image: UIImage) in
                 DispatchQueue.main.async {
                     self?.userImageView.image = image
                     self?.imageActivityIndicator.stopAnimating()
@@ -73,7 +78,7 @@ class ChatsScreenController: UIViewController {
             self.adapter?.setData(data: chats)
             self.searchBarDelegate.updateInitialList(list: chats)
         }
-        viewModel.chatsLiveData.addObserver(observer: observer)
+        viewModel.chatsLiveData.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
     
     private func navigateToChat(chat: Chat){

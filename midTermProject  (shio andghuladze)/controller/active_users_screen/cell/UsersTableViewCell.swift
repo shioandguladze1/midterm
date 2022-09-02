@@ -38,8 +38,8 @@ class UsersTableViewCell: UITableViewCell, TableViewAdapterCell {
         }
         
         userImageView.contentMode = .scaleAspectFit
-        getImage(imageUrl: user.imageUrl) { r in
-            parseResult(result: r) { (image: UIImage) in
+        NetworkManger.getImage(imageUrl: user.imageUrl) { r in
+            NetworkManger.parseResult(result: r) { (image: UIImage) in
                 DispatchQueue.main.async {
                     self.userImageView.contentMode = .scaleAspectFill
                     self.userImageView.image = image

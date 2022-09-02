@@ -9,11 +9,12 @@ import Foundation
 import FirebaseAuth
 
 class AuthRepositoryImpl: AuthRepository{
+    static let shared: AuthRepository = AuthRepositoryImpl()
     
     func createUser(email: String, password: String, onResult: @escaping (Result)-> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             
-            generateResult(data: result?.user, error: error) { r in
+            NetworkManger.generateResult(data: result?.user, error: error) { r in
                 onResult(r)
             }
             
@@ -32,7 +33,7 @@ class AuthRepositoryImpl: AuthRepository{
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             
-            generateResult(data: result?.user.uid, error: error) { r in
+            NetworkManger.generateResult(data: result?.user.uid, error: error) { r in
                 onResult(r)
             }
             

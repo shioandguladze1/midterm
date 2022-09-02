@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MessagesController: UIViewController {
+class MessagesController: BaseViewController {
     @IBOutlet weak var messagesTableview: UITableView!
     private var adapter: TableViewAdapter<Message, MessageCell>?
     var chatMembers: [User] = []
@@ -31,7 +31,7 @@ class MessagesController: UIViewController {
             self.adapter?.setData(data: chat.messages)
             self.scrollToBottom(lastIndex: chat.messages.count - 1)
         }
-        viewModel.currentChatLiveData.addObserver(observer: observer)
+        viewModel.currentChatLiveData.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
 
     @IBAction func onSendButtonClick(_ sender: Any) {

@@ -10,8 +10,8 @@ import FirebaseAuth
 
 class RegistrationViewModel{
     private let semaphore = DispatchSemaphore(value: 1)
-    private let usersRepository: UsersRepository = UsersRepositoryImpl()
-    private let authRepository: AuthRepository = AuthRepositoryImpl()
+    private let usersRepository = UsersRepositoryImpl.shared
+    private let authRepository = AuthRepositoryImpl.shared
     private let validator = CredentialsValidator.shared
     let errorLiveData = LiveData<String>()
     
@@ -52,7 +52,7 @@ class RegistrationViewModel{
         semaphore.wait()
         authRepository.createUser(email: email, password: password) { r in
             
-            parseResult(result: r) { (user: FirebaseAuth.User) in
+            NetworkManger.parseResult(result: r) { (user: FirebaseAuth.User) in
                 self.user = user
                 self.semaphore.signal()
             } onError: { message in
@@ -73,7 +73,7 @@ class RegistrationViewModel{
         
         usersRepository.uploadUserImage(userUid: user.uid, url: imageUrl) { r in
          
-            parseResult(result: r) { (url: String) in
+            NetworkManger.parseResult(result: r) { (url: String) in
                 self.imagePath = url
                 self.semaphore.signal()
             } onError: { message in
@@ -101,7 +101,7 @@ class RegistrationViewModel{
         let userInstance = User(name: userName, UUID: user.uid, imageUrl: imagePath)
         usersRepository.saveUser(user: userInstance) { r in
             
-            parseResult(result: r) { (r: Void) in
+            NetworkManger.parseResult(result: r) { (r: Void) in
                 self.semaphore.signal()
             } onError: { message in
                 self.errorLiveData.setData(data: message)

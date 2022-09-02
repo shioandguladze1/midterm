@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Chat: Decodable{
+struct Chat: Codable{
     let id: String
     let users: [User]
     var messages: [Message]
@@ -18,11 +18,4 @@ struct Chat: Decodable{
         self.id = users.generateChatId()
     }
     
-    func toDictionary()-> NSDictionary{
-        return [
-            "id": id,
-            "users": users.map{ $0.toDictionary() },
-            "messages": messages.map{ $0.toDictionary() }
-        ]
-    }
 }

@@ -16,9 +16,13 @@ class LiveData<T>: Observable{
         notifyObservers()
     }
     
-    func addObserver(observer: Observer<T>) {
+    func addObserver(observer: Observer<T>, lifeCycle: UILifeCycle) {
         observers.append(observer)
         if data != nil { observer.block(data!) }
+        
+        lifeCycle.onLifeCycleEvent(event: .DidDissapear) {
+            self.observers.removeAll { $0.id == observer.id }
+        }
     }
     
     func removeObserver(observer: Observer<T>) {

@@ -8,7 +8,7 @@
 import Foundation
 
 class ChatsControllerViewModel{
-    private let authRepository: AuthRepository = AuthRepositoryImpl()
+    private let authRepository = AuthRepositoryImpl.shared
     
     init(){
         observeUserChats()

@@ -10,6 +10,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class UsersRepositoryImpl: UsersRepository{
+    static let shared: UsersRepository = UsersRepositoryImpl()
+    
     let ref = Database.database().reference()
     let storage = Storage.storage().reference()
     
@@ -25,7 +27,7 @@ class UsersRepositoryImpl: UsersRepository{
         ref.putFile(from: imageUrl) { metadata, error in
             
             ref.downloadURL { url, error in
-                generateResult(data: url?.absoluteString, error: error, onResult: onResult)
+                NetworkManger.generateResult(data: url?.absoluteString, error: error, onResult: onResult)
             }
             
         }
@@ -35,7 +37,7 @@ class UsersRepositoryImpl: UsersRepository{
     func getUserInfo(userUid: String, onResult: @escaping (Result) -> Void) {
         ref.child(usersDirKey).child(userUid).getData { error, snapshot in
             let user = snapshot?.toObject(type: User.self) ?? snapshot?.children.convertToObjectArray(type: User.self).filter { $0.UUID == userUid }[0]
-            generateResult(data: user, error: error, onResult: onResult)
+            NetworkManger.generateResult(data: user, error: error, onResult: onResult)
         }
     }
     
@@ -45,9 +47,14 @@ class UsersRepositoryImpl: UsersRepository{
     }
     
     func saveUser(user: User, onResult: @escaping (Result)-> Void) {
-        ref.child(usersDirKey).child(user.UUID).setValue(user.toDictionary()) { error, ref in
+        guard let dict = user.toDictionary() else {
+            onResult(ErrorResult(errorMessage: "Could not convert \(user) to dictionary"))
+            return
+        }
+        
+        ref.child(usersDirKey).child(user.UUID).setValue(dict) { error, ref in
             
-            generateResult(data: Void(), error: error, onResult: onResult)
+            NetworkManger.generateResult(data: Void(), error: error, onResult: onResult)
             
         }
     }

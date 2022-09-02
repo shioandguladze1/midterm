@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: BaseViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -25,7 +25,7 @@ class LogInViewController: UIViewController {
             self?.showAlertWithOkButton(title: "Error", body: message)
             self?.activityIndicator.stopAnimating()
         }
-        viewModel.errorLiveData.addObserver(observer: observer)
+        viewModel.errorLiveData.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
     
     @IBAction func onLogIn(_ sender: Any) {

@@ -8,7 +8,7 @@
 import Foundation
 
 class ActiveUsersViewModel{
-    private let usersRepository: UsersRepository = UsersRepositoryImpl()
+    private let usersRepository = UsersRepositoryImpl.shared
     let usersLivedata = LiveData<[User]>()
     
     func observeActiveUsers(){

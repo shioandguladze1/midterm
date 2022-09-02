@@ -8,7 +8,7 @@
 import Foundation
 
 class MessagesViewModel{
-    private let chatsRepository: ChatsRepository = ChatsRepositoryImpl()
+    private let chatsRepository = ChatsRepositoryImpl.shared
     
     let currentChatLiveData = LiveData<Chat>()
     
