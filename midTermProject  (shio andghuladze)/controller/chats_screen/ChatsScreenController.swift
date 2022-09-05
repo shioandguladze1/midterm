@@ -21,18 +21,17 @@ class ChatsScreenController: BaseViewController {
         chat.users.getChatTitle().lowercased().contains(searchValue.lowercased())
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(self.hashValue)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        observeToChats()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTableView()
-        observeToChats()
         setUpUserBar()
         setUpSearchBar()
         imageActivityIndicator.hidesWhenStopped = true
+        setUpTableView()
     }
     
     private func setUpSearchBar(){
