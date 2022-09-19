@@ -15,11 +15,15 @@ class ActiveUsersController: BaseViewController {
     private let searchBarDelegate = GeneralSearchBarDelegate<User> { user, searchValue in
         user.name.lowercased().contains(searchValue.lowercased())
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        observeToUsers()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAdapter()
-        observeToUsers()
         setUpSearchBar()
     }
     
