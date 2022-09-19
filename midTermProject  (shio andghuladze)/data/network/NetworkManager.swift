@@ -43,32 +43,21 @@ class NetworkManger{
         
     }
 
-    static func getImage(imageUrl: String, onResult: @escaping (Result)-> Void){
+    static func getImage(imageUrl: String, imageView: UIImageView, placeHolder: UIImage?, onSuccess: @escaping ()-> Void, onError: @escaping (String)-> Void = { print($0) }){
         
         guard let url = URL(string: imageUrl) else {
-            onResult(ErrorResult(errorMessage: "invalid url \(imageUrl)"))
+            onError("invalid url \(imageUrl)")
             return
         }
         
-        session.dataTask(with: URLRequest(url: url)) { data, response, error in
-            if let error = error {
-                onResult(ErrorResult(errorMessage: error.localizedDescription))
+        imageView.sd_setImage(with: url, placeholderImage: placeHolder) { image, error, cacheType, url in
+            guard let error = error else {
+                onSuccess()
                 return
             }
             
-            guard let data = data else {
-                onResult(ErrorResult(errorMessage: "Invalid data \(String(describing: data))"))
-                return
-            }
-            
-            if let image = UIImage(data: data) {
-                onResult(SuccessResult(data: image))
-                return
-            }
-            
-            onResult(ErrorResult(errorMessage: "Unknown Error"))
-            
-        }.resume()
+            onError(error.localizedDescription)
+        }
         
     }
 

@@ -9,9 +9,7 @@ import UIKit
 
 class UsersTableViewCell: UITableViewCell, TableViewAdapterCell {
     typealias T = User
-    
-    private var cachedImage: UIImage?
-    
+        
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -31,20 +29,8 @@ class UsersTableViewCell: UITableViewCell, TableViewAdapterCell {
     }
     
     func configureUserImage(user: User){
-        if let cachedImage = cachedImage {
-            userImageView.contentMode = .scaleAspectFill
-            userImageView.image = cachedImage
-            return
-        }
-        
-        userImageView.contentMode = .scaleAspectFit
-        NetworkManger.getImage(imageUrl: user.imageUrl) { r in
-            NetworkManger.parseResult(result: r) { (image: UIImage) in
-                DispatchQueue.main.async {
-                    self.userImageView.contentMode = .scaleAspectFill
-                    self.userImageView.image = image
-                }
-            }
+        NetworkManger.getImage(imageUrl: user.imageUrl, imageView: userImageView, placeHolder: UIImage(systemName: "person.fill")) { [weak self]
+            self?.userImageView.contentMode = .scaleAspectFill
         }
     }
 }

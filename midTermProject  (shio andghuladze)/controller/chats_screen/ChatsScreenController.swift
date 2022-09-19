@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import SDWebImage
 
 class ChatsScreenController: BaseViewController {
     @IBOutlet weak var chatsTableView: UITableView!
@@ -35,8 +36,8 @@ class ChatsScreenController: BaseViewController {
     }
     
     private func setUpSearchBar(){
-        searchBarDelegate.onValueChanged = { chats in
-            self.adapter?.setData(data: chats)
+        searchBarDelegate.onValueChanged = {[weak self] chats in
+            self?.adapter?.setData(data: chats)
         }
         searchBar.delegate = searchBarDelegate
     }
@@ -54,17 +55,14 @@ class ChatsScreenController: BaseViewController {
         
         imageActivityIndicator.startAnimating()
         userNameLabel.text = user.name
-        NetworkManger.getImage(imageUrl: user.imageUrl) { [weak self] r in
-            NetworkManger.parseResult(result: r) { (image: UIImage) in
-                DispatchQueue.main.async {
-                    self?.userImageView.image = image
-                    self?.imageActivityIndicator.stopAnimating()
-                }
-            } onError: { [weak self] message in
-                self?.showAlertWithOkButton(title: "Error", body: "Could not load user image")
-                self?.imageActivityIndicator.stopAnimating()
-            }
+        
+        NetworkManger.getImage(imageUrl: user.imageUrl, imageView: userImageView, placeHolder: nil) {[weak self] in
+            self?.imageActivityIndicator.stopAnimating()
+        } onError: {[weak self] error in
+            self?.showAlertWithOkButton(title: "Error", body: "Could not load user image")
+            self?.imageActivityIndicator.stopAnimating()
         }
+
     }
     
     private func setUpTableView(){

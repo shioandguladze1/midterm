@@ -10,8 +10,6 @@ import UIKit
 class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
     typealias T = Chat
     
-    private var cachedImage: UIImage?
-    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak private var chatTitleLabel: UILabel!
     @IBOutlet weak var userImageIndicator: UIActivityIndicatorView!
@@ -38,26 +36,12 @@ class ChatsTableViewCell: UITableViewCell, TableViewAdapterCell {
     }
     
     func configureChatImage(users: [User]){
-        if let cachedImage = cachedImage {
-            userImageView.contentMode = .scaleAspectFill
-            userImageView.image = cachedImage
-            return
-        }
-        
-        userImageView.contentMode = .scaleAspectFit
         let otherUsers = users.filter { $0.UUID != UserDefaults.standard.user?.UUID }
         if otherUsers.count == 1 {
-            userImageView.image = nil
             userImageIndicator.startAnimating()
-            userImageView.contentMode = .scaleAspectFill
-            NetworkManger.getImage(imageUrl: otherUsers[0].imageUrl) { r in
-                NetworkManger.parseResult(result: r) { (image: UIImage) in
-                    DispatchQueue.main.async {
-                        self.cachedImage = image
-                        self.userImageView.image = image
-                        self.userImageIndicator.stopAnimating()
-                    }
-                }
+            NetworkManger.getImage(imageUrl: otherUsers[0].imageUrl, imageView: userImageView, placeHolder: UIImage(systemName: "person.fill")) {[weak self] in
+                self?.userImageView.contentMode = .scaleAspectFill
+                self?.userImageIndicator.stopAnimating()
             }
         }
     }

@@ -27,9 +27,9 @@ class MessagesController: BaseViewController {
     
     private func observeToMessages(){
         viewModel.observeToCurrentChat(chatMembers: chatMembers)
-        let observer = Observer<Chat>{ chat in
-            self.adapter?.setData(data: chat.messages)
-            self.scrollToBottom(lastIndex: chat.messages.count - 1)
+        let observer = Observer<Chat>{[weak self] chat in
+            self?.adapter?.setData(data: chat.messages)
+            self?.scrollToBottom(lastIndex: chat.messages.count - 1)
         }
         viewModel.currentChatLiveData.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }

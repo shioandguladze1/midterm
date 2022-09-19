@@ -28,8 +28,8 @@ class ActiveUsersController: BaseViewController {
     }
     
     private func setUpSearchBar(){
-        searchBarDelegate.onValueChanged = { users in
-            self.adapter?.setData(data: users)
+        searchBarDelegate.onValueChanged = {[weak self] users in
+            self?.adapter?.setData(data: users)
         }
         searchBar.delegate = searchBarDelegate
     }
@@ -41,9 +41,9 @@ class ActiveUsersController: BaseViewController {
     
     private func observeToUsers(){
         viewModel.observeActiveUsers()
-        let observer = Observer<[User]>(){ users in
-            self.adapter?.setData(data: users)
-            self.searchBarDelegate.updateInitialList(list: users)
+        let observer = Observer<[User]>(){[weak self] users in
+            self?.adapter?.setData(data: users)
+            self?.searchBarDelegate.updateInitialList(list: users)
         }
         viewModel.usersLivedata.addObserver(observer: observer, lifeCycle: controllerLifecycle)
     }
