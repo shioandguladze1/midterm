@@ -29,7 +29,7 @@ class UsersTableViewCell: UITableViewCell, TableViewAdapterCell {
     }
     
     func configureUserImage(user: User){
-        NetworkManger.getImage(imageUrl: user.imageUrl, imageView: userImageView, placeHolder: UIImage(systemName: "person.fill")) { [weak self]
+        NetworkManger.getImage(imageUrl: user.imageUrl, imageView: userImageView, placeHolder: UIImage(systemName: "person.fill")) { [weak self] in
             self?.userImageView.contentMode = .scaleAspectFill
         }
     }
